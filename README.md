@@ -276,3 +276,7 @@ Testing akan dilakukan menjadi 3 skenario: Selasa 13:00, Selasa 20:00, dan Sabtu
 - Skenario 3
 
   ![sabtu-12:00](img/skenario-3.png)
+
+### Kendala
+
+- Kesusahan untuk menemukan solusi no 6
