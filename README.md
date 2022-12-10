@@ -211,3 +211,16 @@ iptables -A INPUT -m time --timestart 07:00 --timestop 16:00 --weekdays Mon,Tue,
 iptables -A INPUT -m time --weekdays Mon,Tue,Wed,Thu,Fri -j REJECT
 iptables -A INPUT -m time --weekdays Sun,Sat -j REJECT
 ```
+
+Testing:
+
+Pada testing kali ini, digunakan client BlackBell dan Web Server Garden. BlackBell akan melakukan ping ke Garden dengan IP Garden adalah 10.33.0.18
+
+Testing akan dilakukan menjadi 3 skenario: Selasa 13:00, Selasa 20:00, dan Sabtu 12:00. Hasil yang diharapkan adalah skenario 1 berhasil (Bisa ping), skenario 2 gagal (Destination Port Unreachable), skenario 3 gagal (Destination Port Unreachable).
+
+- Skenario 1
+  ![selasa-13:00](img/skenario-1.png)
+- Skenario 2
+  ![selasa-20:00](img/skenario-2.png)
+- Skenario 3
+  ![sabtu-12:00](img/skenario-3.png)
