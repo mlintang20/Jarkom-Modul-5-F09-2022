@@ -54,6 +54,53 @@ Pembagian subnet menggunakan VLSM. Berdasarkan topologi yang telah dibuat, dapat
 
 ![subnetting](/img/subnetting.png)
 
+<table>
+    <tr>
+	    <th>subnet</th>
+        <th>jumlah ip</th>
+        <th>netmask</th>
+    </tr>
+    <tr>
+        <td>A1</td>
+        <td>2</td>
+        <td>/30</td>
+    </tr>
+    <tr>
+        <td>A2</td>
+        <td>2</td>
+        <td>/30</td>
+    </tr>
+    <tr>
+        <td>A3</td>
+        <td>63</td>
+        <td>/25</td>
+    </tr>
+    <tr>
+        <td>A4</td>
+        <td>24</td>
+        <td>/24</td>
+    </tr>
+    <tr>
+        <td>A5</td>
+        <td>256</td>
+        <td>/25</td>
+    </tr>
+     <tr>
+        <td>A6</td>
+        <td>701</td>
+        <td>/22</td>
+    </tr>
+     <tr>
+        <td>A7</td>
+        <td>2</td>
+        <td>/29</td>
+    </tr>
+     <tr>
+        <td>A8</td>
+        <td>2</td>
+        <td>/29</td>
+    </tr>
+<table>
 
 ### C
 
