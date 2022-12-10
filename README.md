@@ -369,8 +369,21 @@ Script tersebut untuk yang mengakses Garden dengan port 80.
 
 Dan script tersebut untuk yang mengakses SSS dengan port 443.
 
-Untuk testing bisa menggunakan command `nc -l -p [PORT]` di reciever dan `nc [IP Receiver] [PORT]`
+Untuk testing bisa menggunakan command `nc -l -p [PORT]` di reciever dan `nc [IP Receiver] [PORT]` di sender, setelah itu kita bisa mengetik sebuah kata atau kalimat sesuka kita, nanti reciever akan menampilkan hasil ketikan yang sudah kita buat di sender. Contoh :
 
+Disini Ostania sebagai sender ke Garden, kita ketikkan Jarkom Modul 5 di Ostania.
+
+![Ostania-Garden](img/Ostania-Garden(Sender).png)
+
+Maka di Garden juga akan menampilkan kalimat yang sama.
+
+![Garden](img/Garden(Reciever).png)
+
+Sama seperti SSS, Ostania sebagai sender dan SSS sebagai reciever.
+
+![Ostania-Garden](https://github.com/mlintang20/Jarkom-Modul-5-F09-2022/blob/master/img/Ostania-Garden(Sender).png)
+
+![Garden](img/Garden(Reciever).png)
 
 ### Kendala
 
