@@ -178,3 +178,14 @@ iptables -A INPUT -p icmp -m connlimit --connlimit-above 2 --connlimit-mask 0 -j
 ```
 
 Setting iptables di atas dilakukan pada DHCP Server (WISE) dan DNS Server (Eden).
+
+Testing:
+
+Pada testing kali ini akan dilakukan ping dari 3 client (BlackBell, Briar, Desmond) ke DHCP Server (WISE / 10.33.0.11) dan DNS Server (Eden / 10.33.0.10). Seharusnya client ke-3, Desmond, sudah tidak bisa ping ke DHCP dan DNS Server.
+
+![WISE-BlackBell](img/WISE-BlackBell.png)
+![WISE-Briar](img/WISE-Briar.png)
+![WISE-Desmond](img/WISE-Desmond.png)
+![Eden-BlackBell](img/Eden-BlackBell.png)
+![Eden-Briar](img/Eden-Briar.png)
+![Eden-Desmond](img/Eden-Desmond.png)
