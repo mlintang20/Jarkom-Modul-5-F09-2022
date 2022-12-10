@@ -54,6 +54,10 @@ Pembagian subnet menggunakan VLSM. Berdasarkan topologi yang telah dibuat, dapat
 
 ![subnetting](/img/subnetting.png)
 
+### jumlah alamat IP
+
+berikut ini adalah jumlah ip untuk masing-masing subnet yang telah ditentukan. Berdasarkan total jumlah IP untuk A1 hingga A8 pada tabel berikut, didapatkan netmask /21 sebagai netmask terbesar yang akan digunakan untuk pembagian IP.
+
 <table>
     <tr>
 	    <th>subnet</th>
@@ -100,7 +104,17 @@ Pembagian subnet menggunakan VLSM. Berdasarkan topologi yang telah dibuat, dapat
         <td>2</td>
         <td>/29</td>
     </tr>
+     <tr>
+        <td>total</td>
+        <td>1052</td>
+        <td>/21</td>
+    </tr>
+    
 <table>
+
+### Tree
+
+![tree](/img/Tree%20VLSM.png)
 
 ### C
 
