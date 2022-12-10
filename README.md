@@ -42,6 +42,19 @@ Keterangan :
     Jumlah Host pada Briar adalah 200 host
     Strix, Westalis, Ostania adalah DHCP Relay
 
+
+### B
+soal :
+
+Untuk menjaga perdamaian dunia, Loid ingin meminta kalian untuk membuat topologi tersebut menggunakan teknik CIDR atau VLSM setelah melakukan subnetting.
+
+jawab :
+
+Pembagian subnet menggunakan VLSM. Berdasarkan topologi yang telah dibuat, dapat ditentukan labelling netmask sebagai berikut
+
+![subnetting](/img/subnetting.png)
+
+
 ### C
 
 Soal:
