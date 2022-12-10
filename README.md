@@ -184,16 +184,27 @@ Testing:
 Pada testing kali ini akan dilakukan ping dari 3 client (BlackBell, Briar, Desmond) ke DHCP Server (WISE / 10.33.0.11) dan DNS Server (Eden / 10.33.0.10). Seharusnya client ke-3, Desmond, sudah tidak bisa ping ke DHCP dan DNS Server.
 
 - WISE-BlackBell
+
   ![WISE-BlackBell](img/WISE-BlackBell.png)
+
 - WISE-Briar
+
   ![WISE-Briar](img/WISE-Briar.png)
+
 - WISE-Desmond
+
   ![WISE-Desmond](img/WISE-Desmond.png)
+
 - Eden-BlackBell
+
   ![Eden-BlackBell](img/Eden-BlackBell.png)
+
 - Eden-Briar
+
   ![Eden-Briar](img/Eden-Briar.png)
+
 - Eden-Desmond
+
   ![Eden-Desmond](img/Eden-Desmond.png)
 
 ### NO 4
@@ -219,8 +230,13 @@ Pada testing kali ini, digunakan client BlackBell dan Web Server Garden. BlackBe
 Testing akan dilakukan menjadi 3 skenario: Selasa 13:00, Selasa 20:00, dan Sabtu 12:00. Hasil yang diharapkan adalah skenario 1 berhasil (Bisa ping), skenario 2 gagal (Destination Port Unreachable), skenario 3 gagal (Destination Port Unreachable).
 
 - Skenario 1
+
   ![selasa-13:00](img/skenario-1.png)
+
 - Skenario 2
+
   ![selasa-20:00](img/skenario-2.png)
+
 - Skenario 3
+
   ![sabtu-12:00](img/skenario-3.png)
