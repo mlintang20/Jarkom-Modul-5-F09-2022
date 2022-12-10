@@ -21,6 +21,27 @@
     </tr>
 <table>
 
+### A
+
+Soal:
+
+Tugas pertama kalian yaitu membuat topologi jaringan sesuai dengan rancangan yang diberikan Loid dibawah ini:
+
+Jawab:
+
+![Topologi](img/Topologi.png)
+
+Keterangan :
+
+    Eden adalah DNS Server
+    WISE adalah DHCP Server
+    Garden dan SSS adalah Web Server
+    Jumlah Host pada Forger adalah 62 host
+    Jumlah Host pada Desmond adalah 700 host
+    Jumlah Host pada Blackbell adalah 255 host
+    Jumlah Host pada Briar adalah 200 host
+    Strix, Westalis, Ostania adalah DHCP Relay
+
 ### C
 
 Soal:
