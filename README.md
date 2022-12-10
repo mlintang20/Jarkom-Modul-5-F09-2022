@@ -123,3 +123,30 @@ Setelah itu jangan lupa restart service DHCP Relay
 ```
 service isc-dhcp-relay restart
 ```
+
+### NO 1
+
+Soal: Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Strix menggunakan iptables, tetapi Loid tidak ingin menggunakan MASQUERADE
+
+Jawab: Karena konfigurasi pada router Strix tidak boleh memakai MASQUERADE, maka diperlukan beberapa hal. Pertama, setting pada `Configure -> Edit network configuration` khususnya pada interface yang terhubung dengan NAT, yaitu `eth0`. Kedua, menambahkan aturan iptables pada Strix.
+
+Pada langkah pertama, `eth0` harus disetting IP Strix menjadi static dan disesuaikan dengan IP NAT. Karena IP NAT adalah 192.168.122.1, maka IP Strix dapat disetting menjadi 192.168.122.2 dengan netmask 255.255.255.252 atau /30. Address diisi IP Strix dan gateway diisi IP NAT.
+
+Langkah kedua, dilakukan setting iptables dengan menggunakan POSTROUTING di mana akan mendifinisikan alamat asal dari paket yaitu semua alamat IP dari subnet 10.33.0.0/21 mengguanakan eth0 dan akan mengubah alamat asal paket menggunakan -j SNAT.
+
+Konfigurasi `eth0` pada Strix
+
+```
+auto eth0
+iface eth0 inet static
+        address 192.168.122.2
+        netmask 255.255.255.252
+        gateway 192.168.122.1
+        up echo nameserver 192.168.122.1 > /etc/resolv.conf
+```
+
+Konfigurasi iptables pada Strix
+
+```
+iptables -t nat -A POSTROUTING -o eth0 -j SNAT -s 10.33.0.0/21 --to-source 192.168.122.2
+```
