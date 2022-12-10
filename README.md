@@ -350,6 +350,27 @@ Testing akan dilakukan menjadi 3 skenario: Selasa 13:00, Selasa 20:00, dan Sabtu
 - Skenario 3
 
   ![sabtu-12:00](img/skenario-3.png)
+  
+### NO 5
+
+Soal:
+
+Karena kita memiliki 2 Web Server, Loid ingin Ostania diatur sehingga setiap request dari client yang mengakses Garden dengan port 80 akan didistribusikan secara bergantian pada SSS dan Garden secara berurutan dan request dari client yang mengakses SSS dengan port 443 akan didistribusikan secara bergantian pada Garden dan SSS secara berurutan.
+
+Jawab :
+
+Untuk mengerjakan soal nomor 5, bisa menambahkan command di `root/script_ostania.sh`. Untuk command nya sendiri adalah sebagai berikut :
+
+`iptables -A PREROUTING -t nat -p tcp --dport 80 -d 10.33.0.18 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 10.33.0.19:80`
+
+Script tersebut untuk yang mengakses Garden dengan port 80.
+
+`iptables -A PREROUTING -t nat -p tcp --dport 443 -d 10.33.0.19 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 10.33.0.18:443`
+
+Dan script tersebut untuk yang mengakses SSS dengan port 443.
+
+Untuk testing bisa menggunakan command `nc -l -p [PORT]` di reciever dan `nc [IP Receiver] [PORT]`
+
 
 ### Kendala
 
