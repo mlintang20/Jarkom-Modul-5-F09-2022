@@ -163,6 +163,21 @@ Konfigurasi iptables pada Strix
 iptables -t nat -A POSTROUTING -o eth0 -j SNAT -s 10.33.0.0/21 --to-source 192.168.122.2
 ```
 
+### NO 2
+
+Soal:
+
+Kalian diminta untuk melakukan drop semua TCP dan UDP dari luar Topologi kalian pada server yang merupakan DHCP Server demi menjaga keamanan.
+
+Jawab:
+
+Untuk melakukan drop semua TCP dan UDP dari luar topologi pada server yang merupakan DHCP Server (WISE / 10.33.0.11), dilakukan pengaturan iptables pada Strix sebagai router utama yang terhubung dengan luar topologi. Semua paket TCP dan UDP yang akan memasuki topologi yang menuju DHCP Server akan didrop oleh router Strix. Berikut adalah konfigurasi pada Strix.
+
+```
+iptables -A FORWARD -i eth0 -p tcp -d 10.33.0.11 -j DROP
+iptables -A FORWARD -i eth0 -p udp -d 10.33.0.11 -j DROP
+```
+
 ### NO 3
 
 Soal:
