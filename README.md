@@ -195,3 +195,19 @@ Pada testing kali ini akan dilakukan ping dari 3 client (BlackBell, Briar, Desmo
   ![Eden-Briar](img/Eden-Briar.png)
 - Eden-Desmond
   ![Eden-Desmond](img/Eden-Desmond.png)
+
+### NO 4
+
+Soal:
+
+Akses menuju Web Server hanya diperbolehkan disaat jam kerja yaitu Senin sampai Jumat pada pukul 07.00 - 16.00.
+
+Jawab:
+
+Pada Web Server, Garden dan SSS, dilakukan setting iptables sesuai dengan soal. Setting yang dilakukan dapat menggunakan beberapa cara, namun kali ini kami menggunakan 3 langkah untuk menjawab soal ini. Pertama, terima (ACCEPT) semua paket yang masuk (INPUT) ke Web Server pada Senin-Jumat pukul 07:00-16:00. Kedua, tolak (REJECT) semua paket pada Senin-Jumat. Ketiga, tolak (REJECT) semua paket pada Sabtu-Minggu. Setting berikut ini dilakukan pada semua Web Server, yaitu Garden dan SSS.
+
+```
+iptables -A INPUT -m time --timestart 07:00 --timestop 16:00 --weekdays Mon,Tue,Wed,Thu,Fri -j ACCEPT
+iptables -A INPUT -m time --weekdays Mon,Tue,Wed,Thu,Fri -j REJECT
+iptables -A INPUT -m time --weekdays Sun,Sat -j REJECT
+```
