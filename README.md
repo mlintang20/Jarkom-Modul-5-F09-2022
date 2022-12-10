@@ -162,3 +162,19 @@ Konfigurasi iptables pada Strix
 ```
 iptables -t nat -A POSTROUTING -o eth0 -j SNAT -s 10.33.0.0/21 --to-source 192.168.122.2
 ```
+
+### NO 3
+
+Soal:
+
+Loid meminta kalian untuk membatasi DHCP dan DNS Server hanya boleh menerima maksimal 2 koneksi ICMP secara bersamaan menggunakan iptables, selebihnya didrop.
+
+Jawab:
+
+Untuk mebatasi koneksi ICMP ke DHCP dan DNS Server secara bersamaaan, diperlukan setting iptables menggunakan `connlimit`. Jika koneksi ICMP yang diterima oleh DHCP dan DNS Server lebih dari 2 maka akan didrop. Sehingga iptables yang diterapkan adalah sebagai berikut.
+
+```
+iptables -A INPUT -p icmp -m connlimit --connlimit-above 2 --connlimit-mask 0 -j DROP
+```
+
+Setting iptables di atas dilakukan pada DHCP Server (WISE) dan DNS Server (Eden).
