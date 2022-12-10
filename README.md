@@ -23,9 +23,13 @@
 
 ### C
 
-Soal: Anya, putri pertama Loid, juga berpesan kepada anda agar melakukan Routing agar setiap perangkat pada jaringan tersebut dapat terhubung
+Soal:
 
-Jawab: Routing yang dilakukan adalah _static routing_ yang dilakukan pada router Strix sebagai router utama. Routing diarahkan ke semua subnet di router Westalis dan router Ostania yang tidak terhubung secara langsung dengan router Strix. Hal ini dilakukan agar semua node dapat terhubung internet.
+Anya, putri pertama Loid, juga berpesan kepada anda agar melakukan Routing agar setiap perangkat pada jaringan tersebut dapat terhubung
+
+Jawab:
+
+Routing yang dilakukan adalah _static routing_ yang dilakukan pada router Strix sebagai router utama. Routing diarahkan ke semua subnet di router Westalis dan router Ostania yang tidak terhubung secara langsung dengan router Strix. Hal ini dilakukan agar semua node dapat terhubung internet.
 
 ```
 route add -net 10.33.4.0 netmask 255.255.252.0 gw 10.33.0.2
@@ -39,9 +43,13 @@ route add -net 10.33.0.16 netmask 255.255.255.248 gw 10.33.0.6
 
 ### D
 
-Soal: Tugas berikutnya adalah memberikan ip pada subnet Forger, Desmond, Blackbell, dan Briar secara dinamis menggunakan bantuan DHCP server. Kemudian kalian ingat bahwa kalian harus setting DHCP Relay pada router yang menghubungkannya
+Soal:
 
-Jawab: Untuk melakukan pembagian IP dengan cara DHCP maka diperlukan beberapa setting di DHCP Server dan DHCP Relay. Pada DHCP Server diperlukan pengaturan pada file `/etc/default/isc-dhcp-server` dan file `/etc/dhcp/dhcpd.conf`. Sedangkan pada DHCP Relay dilakukan setting pada file `/etc/default/isc-dhcp-relay`.
+Tugas berikutnya adalah memberikan ip pada subnet Forger, Desmond, Blackbell, dan Briar secara dinamis menggunakan bantuan DHCP server. Kemudian kalian ingat bahwa kalian harus setting DHCP Relay pada router yang menghubungkannya
+
+Jawab:
+
+Untuk melakukan pembagian IP dengan cara DHCP maka diperlukan beberapa setting di DHCP Server dan DHCP Relay. Pada DHCP Server diperlukan pengaturan pada file `/etc/default/isc-dhcp-server` dan file `/etc/dhcp/dhcpd.conf`. Sedangkan pada DHCP Relay dilakukan setting pada file `/etc/default/isc-dhcp-relay`.
 
 Pada `/etc/default/isc-dhcp-server`:
 
@@ -126,9 +134,13 @@ service isc-dhcp-relay restart
 
 ### NO 1
 
-Soal: Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Strix menggunakan iptables, tetapi Loid tidak ingin menggunakan MASQUERADE
+Soal:
 
-Jawab: Karena konfigurasi pada router Strix tidak boleh memakai MASQUERADE, maka diperlukan beberapa hal. Pertama, setting pada `Configure -> Edit network configuration` khususnya pada interface yang terhubung dengan NAT, yaitu `eth0`. Kedua, menambahkan aturan iptables pada Strix.
+Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Strix menggunakan iptables, tetapi Loid tidak ingin menggunakan MASQUERADE
+
+Jawab:
+
+Karena konfigurasi pada router Strix tidak boleh memakai MASQUERADE, maka diperlukan beberapa hal. Pertama, setting pada `Configure -> Edit network configuration` khususnya pada interface yang terhubung dengan NAT, yaitu `eth0`. Kedua, menambahkan aturan iptables pada Strix.
 
 Pada langkah pertama, `eth0` harus disetting IP Strix menjadi static dan disesuaikan dengan IP NAT. Karena IP NAT adalah 192.168.122.1, maka IP Strix dapat disetting menjadi 192.168.122.2 dengan netmask 255.255.255.252 atau /30. Address diisi IP Strix dan gateway diisi IP NAT.
 
