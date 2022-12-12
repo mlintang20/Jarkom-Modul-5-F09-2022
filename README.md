@@ -81,7 +81,7 @@ berikut ini adalah jumlah ip untuk masing-masing subnet yang telah ditentukan. B
     </tr>
     <tr>
         <td>A4</td>
-        <td>24</td>
+        <td>201</td>
         <td>/24</td>
     </tr>
     <tr>
@@ -96,17 +96,17 @@ berikut ini adalah jumlah ip untuk masing-masing subnet yang telah ditentukan. B
     </tr>
      <tr>
         <td>A7</td>
-        <td>2</td>
+        <td>3</td>
         <td>/29</td>
     </tr>
      <tr>
         <td>A8</td>
-        <td>2</td>
+        <td>3</td>
         <td>/29</td>
     </tr>
      <tr>
         <td>total</td>
-        <td>1052</td>
+        <td>1231</td>
         <td>/21</td>
     </tr>
     
